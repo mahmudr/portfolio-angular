@@ -1,0 +1,101 @@
+<ion-card class="custom-card">
+  <ion-card-content>
+    <div class="cards-container">
+      <div class="header">
+        Projects: 
+      </div>
+      <div class="cards">
+        @if (windowWidth >= 1920) {
+          <swiper-container #swiperRef loop="true" slides-per-view="3.5" space-between="25" grab-cursor="true">
+            @for (project of projects; track $index) {
+             <swiper-slide [id]="$index">
+               <mat-card appearance="outlined">
+                 <img mat-card-image class="img" [alt]="project.name" [src]="'assets/' + project.photoName" width="300" height="168" loading="lazy" >
+                 <mat-card-content>
+                   <div class="card-header">
+                    <div class="header-text" [innerHTML]="project.name"></div>
+                    @if (project.href) {
+                      <div class="icon">
+                        <mat-icon aria-hidden="false" aria-label="project link icon" fontIcon="link" (click)="goToLink(project.href)"></mat-icon>
+                      </div>
+                    }
+                   </div>
+                   <div class="card-content" [innerHTML]="project.shortDesc"></div>
+                 </mat-card-content>
+               </mat-card>
+             </swiper-slide>
+            }
+           </swiper-container>
+        } @else if(windowWidth >= 1536) {
+          <swiper-container #swiperRef loop="true" slides-per-view="3.2" space-between="30" grab-cursor="true">
+            @for (project of projects; track $index) {
+             <swiper-slide [id]="$index">
+               <mat-card appearance="outlined">
+                 <img mat-card-image class="img" [alt]="project.name" [src]="'assets/' + project.photoName" width="300" height="168" loading="lazy" >
+                 <mat-card-content>
+                   <div class="card-header">
+                    <div class="header-text" [innerHTML]="project.name"></div>
+                    @if (project.href) {
+                      <div class="icon">
+                        <mat-icon aria-hidden="false" aria-label="project link icon" fontIcon="link" (click)="goToLink(project.href)"></mat-icon>
+                      </div>
+                    }
+                   </div>
+                   <div class="card-content" [innerHTML]="project.shortDesc"></div>
+                   
+                 </mat-card-content>
+               </mat-card>
+             </swiper-slide>
+            }
+           </swiper-container>
+        }
+        @else if(windowWidth >= 1280) {
+          <swiper-container #swiperRef loop="true" slides-per-view="2.5" space-between="30"  grab-cursor="true">
+            @for (project of projects; track $index) {
+             <swiper-slide [id]="$index">
+               <mat-card appearance="outlined">
+                 <img mat-card-image class="img" [alt]="project.name" [src]="'assets/' + project.photoName" width="300" height="168" loading="lazy" >
+                 <mat-card-content>
+                   <div class="card-header">
+                    <div class="header-text" [innerHTML]="project.name"></div>
+                    @if (project.href) {
+                      <div class="icon">
+                        <mat-icon aria-hidden="false" aria-label="project link icon" fontIcon="link" (click)="goToLink(project.href)"></mat-icon>
+                      </div>
+                    }
+                   </div>
+                   <div class="card-content" [innerHTML]="project.shortDesc"></div>
+                 </mat-card-content>
+               </mat-card>
+             </swiper-slide>
+            }
+           </swiper-container>
+        }
+        @else {
+          <swiper-container #swiperRef loop="true" slides-per-view="1" space-between="30" grab-cursor="true">
+            @for (project of projects; track $index) {
+             <swiper-slide [id]="$index">
+               <mat-card appearance="outlined">
+                 <img mat-card-image class="img" [alt]="project.name" [src]="'assets/' + project.photoName" width="300" height="168" loading="lazy" >
+                 <mat-card-content>
+                   <div class="card-header">
+                    <div class="header-text" [innerHTML]="project.name"></div>
+                    @if (project.href) {
+                      <div class="icon">
+                        <mat-icon aria-hidden="false" aria-label="project link icon" fontIcon="link" (click)="goToLink(project.href)"></mat-icon>
+                      </div>
+                    }
+                   </div>
+                   <div class="card-content" [innerHTML]="project.shortDesc"></div>
+                 </mat-card-content>
+               </mat-card>
+             </swiper-slide>
+            }
+           </swiper-container>
+        }
+
+        
+      </div>
+  </div>
+  </ion-card-content>
+</ion-card>

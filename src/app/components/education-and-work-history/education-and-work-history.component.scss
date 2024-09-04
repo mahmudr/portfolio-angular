@@ -1,0 +1,32 @@
+.edu-exp-container {
+    width: 100%;
+    height: auto;
+
+    color: #2B2D42;
+    margin: 1rem .5rem;
+
+    .flex-container {
+        display: flex;
+        flex-direction: row; // Initially set to row
+      
+        .left-column, .right-column {
+          flex: 1;
+          padding: 0.625rem 0; // Adjust padding as needed
+          margin-right: .5rem;
+
+          mat-card {
+            margin-bottom: .5rem;
+          }
+        }
+      
+        @media (max-width: 768px) {
+          flex-direction: column; // Switch to column layout on smaller screens
+      
+          .left-column, .right-column {
+            width: 100%; // Make each column take up full width
+          }
+        }
+      }
+      
+}
+

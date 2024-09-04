@@ -1,0 +1,150 @@
+ @use '@angular/material' as mat;
+ @include mat.core();
+
+ /* For use in src/lib/core/theming/_palette.scss */
+ $my-primary-palette : (50 : #e6e6e8,
+     100 : #bfc0c6,
+     200 : #9596a1,
+     300 : #6b6c7b,
+     400 : #4b4d5e,
+     500 : #2b2d42,
+     600 : #26283c,
+     700 : #202233,
+     800 : #1a1c2b,
+     900 : #10111d,
+     A100 : #6161ff,
+     A200 : #2e2eff,
+     A400 : #0000fa,
+     A700 : #0000e0,
+     contrast: (50 : #000000,
+         100 : #000000,
+         200 : #000000,
+         300 : #ffffff,
+         400 : #ffffff,
+         500 : #ffffff,
+         600 : #ffffff,
+         700 : #ffffff,
+         800 : #ffffff,
+         900 : #ffffff,
+         A100 : #ffffff,
+         A200 : #ffffff,
+         A400 : #ffffff,
+         A700 : #ffffff,
+     ));
+
+ $my-accent-palette: (
+     50 : #f4edfa,
+     100 : #e3d3f2,
+     200 : #d0b6ea,
+     300 : #bd98e2,
+     400 : #ae82db,
+     500 : #a06cd5,
+     600 : #9864d0,
+     700 : #8e59ca,
+     800 : #844fc4,
+     900 : #733dba,
+     A100 : #ffffff,
+     A200 : #e7d6ff,
+     A400 : #c9a3ff,
+     A700 : #bb8aff,
+     contrast: (50 : #000000,
+         100 : #000000,
+         200 : #000000,
+         300 : #000000,
+         400 : #000000,
+         500 : #000000,
+         600 : #ffffff,
+         700 : #ffffff,
+         800 : #ffffff,
+         900 : #ffffff,
+         A100 : #000000,
+         A200 : #000000,
+         A400 : #000000,
+         A700 : #000000,
+     )
+ );
+
+ $my-primary: mat.define-palette($my-primary-palette);
+ $my-accent: mat.define-palette($my-accent-palette);
+
+
+ $my-theme: mat.define-light-theme((color: (primary: $my-primary, accent: $my-accent),
+             typography: mat.define-typography-config($font-family: 'Roboto, Helvetica Neue, sans-serif'
+             ),
+             density: 0,
+         ));
+
+
+ // Emit theme-dependent styles for common features used across multiple components.
+ @include mat.core-theme($my-theme);
+ @include mat.all-component-themes($my-theme);
+
+ .header {
+     color: #2B2D42;
+     font-size: 1.25rem;
+     font-weight: bold;
+ }
+
+ .subHeader {
+     color: rgba(42, 44, 65, 0.8);
+     font-size: 1rem;
+     font-weight: 500;
+ }
+
+ .img {
+     max-width: 100% !important;
+     height: auto !important;
+     vertical-align: middle !important;
+     font-style: italic !important;
+     background-repeat: no-repeat !important;
+     background-size: cover !important;
+     shape-margin: 0.75rem !important;
+ }
+
+ .splash-screen {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     z-index: 999;
+
+     background: #2B2D42;
+
+     display: flex;
+     justify-items: center;
+     align-items: center;
+     justify-content: center;
+ }
+
+
+ .custom-card {
+     border-radius: 10px;
+     box-shadow: none;
+ }
+
+ swiper-container {
+     width: 100%;
+     height: 100%;
+ }
+
+ swiper-slide {
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 1rem;
+ }
+
+ swiper-slide img {
+     display: block;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+ swiper-container {
+     margin-left: auto;
+     margin-right: auto;
+ }

@@ -1,0 +1,11 @@
+<div class="container">
+  <profile name="Md. Rahat Mahmud" jobTitle="Full Stack Developer" location="Bangladesh" [links]="links" [about_me]="about_me" />
+  <skills-and-experience [description]="'Have a look at my skills and experience, from front-end to back-end development.'" [skills_exp]="skills_exp" />
+  <projects [projects]="projects" />
+  <!-- <education-and-work-history />  -->
+</div>
+
+<div #loadingScreen class="splash-screen">
+  <animation src="assets/opening_animation.json" (onAnimationComplete)="loadingScreen.remove()" [loop]="false"
+    [height]="'150px'" [width]="'150px'" />
+</div>

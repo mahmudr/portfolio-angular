@@ -1,0 +1,29 @@
+<ion-card class="custom-card">
+  <ion-card-content>
+    <div class="profile-container">
+      <div class="info">
+        <div class="header">{{name}}</div>
+        <div class="subHeader">{{jobTitle}}</div>
+      </div>
+      <div class="other">
+        <div class="links">
+          @for (item of links; track item.href) {
+            <a [href]="item.href" target="_blank" [innerHTML]="item.name | titlecase"></a>
+          } 
+        </div>
+
+        <div class="time-zone">
+            <span class="location" [innerHTML]="location | titlecase"></span>
+            <span [innerHTML]="time | uppercase"></span>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="about-container">
+      <div class="header">
+        About me:
+      </div>
+      <div class="content">{{about_me}}</div>
+    </div>
+  </ion-card-content>
+</ion-card>

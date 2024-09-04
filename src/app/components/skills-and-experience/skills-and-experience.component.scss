@@ -1,0 +1,73 @@
+.se-container {
+    width: 100%;
+    height: auto;
+    color: #2B2D42;
+    padding: 0 .5rem;
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        width: inherit;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .chart {
+        display: inherit;
+        justify-content: center;
+        width: 60%;
+
+        .highchart {
+            padding: 0 1rem;
+            width: 100%;
+        }
+    }
+    
+    .se {
+        display: inherit;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Adjust as needed */
+        width: 40%;
+    }
+    
+    /* Assuming the elements inside .se are divs or similar */
+    .se > * {
+        width: calc(50% - 10px); /* Adjust width as needed */
+        margin-bottom: 20px; /* Adjust margin as needed */
+    }
+    
+    .header-text {
+        font-size: large;
+        font-weight: 500;
+        margin-top: .5rem;
+    }
+    
+    /* Media Query for switching to column layout */
+    @media screen and (max-width: 768px) {
+        .content {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .se {
+            width: 100%; /* Full width */
+        }
+
+        .se > * {
+            width: 100%; /* Adjust width as needed */
+            margin-bottom: 20px; /* Adjust margin as needed */
+        }
+
+
+        .chart {
+            width: 100%;
+            .highchart {
+                width: 100%;
+            }
+        }
+    
+    
+        /* Adjust other styles as needed */
+    }
+    
+}
